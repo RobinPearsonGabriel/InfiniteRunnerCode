@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "GMPROG2P1",
+			"Path": "C:\\Users\\binga\\OneDrive\\Documents\\gamprg2_3rd_term_2021_infinite_runner\\GMPROG2P1\\Source\\GMPROG2P1.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "GMPROG2P1Editor",
+			"Path": "C:\\Users\\binga\\OneDrive\\Documents\\gamprg2_3rd_term_2021_infinite_runner\\GMPROG2P1\\Source\\GMPROG2P1Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}

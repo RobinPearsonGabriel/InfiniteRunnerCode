@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\GMPROG2P1.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{64DDA1A4-862C-4D59-8320-2F7E691DB34F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GMPROG2P1.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\GMPROG2P1Editor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{A809115A-CE7B-4595-B558-C341E551974B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\GMPROG2P1">
+      <UniqueIdentifier>{5E0CEBD3-600B-42B1-88C7-162E6B50E63E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\GMPROG2P1\GMPROG2P1.Build.cs">
+      <Filter>Source\GMPROG2P1</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\GMPROG2P1\GMPROG2P1.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\GMPROG2P1.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GMPROG2P1\GMPROG2P1Character.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\GMPROG2P1Character.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GMPROG2P1\GMPROG2P1GameMode.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\GMPROG2P1GameMode.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GMPROG2P1\RunCharacter.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\RunCharacter.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GMPROG2P1\RunCharacterController.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\RunCharacterController.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\GMPROG2P1\RunGameMode.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\RunGameMode.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
