@@ -59,8 +59,7 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ARunCharacter); \
 
 
 #define GMPROG2P1_Source_GMPROG2P1_RunCharacter_h_12_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__SkeletalMesh() { return STRUCT_OFFSET(ARunCharacter, SkeletalMesh); } \
-	FORCEINLINE static uint32 __PPO__Camera() { return STRUCT_OFFSET(ARunCharacter, Camera); }
+	FORCEINLINE static uint32 __PPO__SpringArm() { return STRUCT_OFFSET(ARunCharacter, SpringArm); }
 
 
 #define GMPROG2P1_Source_GMPROG2P1_RunCharacter_h_9_PROLOG

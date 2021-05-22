@@ -4,17 +4,31 @@
 #include "RunCharacter.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Containers/UnrealString.h"
 // Sets default values
 ARunCharacter::ARunCharacter()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>("Skeletal Mesh");
-	SetRootComponent(SkeletalMesh);
-	Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
+	
+	SetRootComponent((USceneComponent*)GetCapsuleComponent());
+Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>("Spring Arm");
+		SpringArm->SetupAttachment((USceneComponent*)GetCapsuleComponent());
+	//	SkeletalMesh = CreateDefaultSubobject<USkeletalMeshComponent>("SkeletalMesh");
 
-	Camera->SetupAttachment(SkeletalMesh);
-	Camera->SetRelativeLocation(FVector(-500.0f, 0, 0));
+	
+	SpringArm->TargetArmLength =10.0f;
+	SpringArm->bUsePawnControlRotation;
+	//SkeletalMesh->SetupAttachment((USceneComponent*)GetCapsuleComponent());
+	bUseControllerRotationPitch = true;
+	bUseControllerRotationRoll = true;
+	bUseControllerRotationRoll = true;
+	
+	
+	Camera->SetupAttachment(SpringArm);
+	//Camera->SetRelativeLocation(FVector(-500.0f, 0, 0));
 }
 
 // Called when the game starts or when spawned
@@ -28,6 +42,10 @@ void ARunCharacter::BeginPlay()
 void ARunCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	FVector location = this->GetActorLocation();
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, location.ToString());
 
 }
 

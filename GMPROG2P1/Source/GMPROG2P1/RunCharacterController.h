@@ -14,4 +14,21 @@ class GMPROG2P1_API ARunCharacterController : public APlayerController
 {
 	GENERATED_BODY()
 	
+
+		virtual void BeginPlay() override;
+protected:
+	void MoveRight(float scale);
+	
+	void MoveForward(float scale);
+
+	virtual void SetupInputComponent() override;
+
+public:
+
+	virtual void Tick(float DeltaTime) override;
+
+
+	class ARunCharacter* Runcharacter;
+
+
 };
