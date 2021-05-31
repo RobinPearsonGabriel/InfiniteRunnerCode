@@ -44,8 +44,8 @@ void ARunCharacter::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 	FVector location = this->GetActorLocation();
-	if (GEngine)
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, location.ToString());
+	//if (GEngine)
+	//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, location.ToString());
 
 }
 
@@ -53,6 +53,6 @@ void ARunCharacter::Tick(float DeltaTime)
 void ARunCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
+	
 }
 

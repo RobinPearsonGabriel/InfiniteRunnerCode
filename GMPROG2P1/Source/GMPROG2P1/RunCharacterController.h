@@ -23,12 +23,15 @@ protected:
 
 	virtual void SetupInputComponent() override;
 
+class ARunCharacter* Runcharacter;
+
 public:
 
 	virtual void Tick(float DeltaTime) override;
+	//UFUNCTION(BlueprintImplementableEvent)
+//	void OnTileExit()
 
-
-	class ARunCharacter* Runcharacter;
+	
 
 
 };

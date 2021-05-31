@@ -6,6 +6,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "RunGameMode.generated.h"
 
+
 /**
  * 
  */
@@ -13,5 +14,20 @@ UCLASS()
 class GMPROG2P1_API ARunGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
+protected:
+	virtual void BeginPlay() override;
+	UFUNCTION()
+	void onTileExit(class AFloorTile* floorTile);
+	UPROPERTY(EditAnywhere)
+		TSubclassOf <class AFloorTile> TilePrefab;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FTransform NewTransformPoint;
+
 	
+	 UFUNCTION()
+	void AddTile();
+public :
+
+
+ARunGameMode();
 };

@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\GMPROG2P1.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{64DDA1A4-862C-4D59-8320-2F7E691DB34F}</UniqueIdentifier>
+      <UniqueIdentifier>{F3215FF7-697F-490B-8682-EC0D3551ACEF}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\GMPROG2P1.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{A809115A-CE7B-4595-B558-C341E551974B}</UniqueIdentifier>
+      <UniqueIdentifier>{A275A830-4DAA-463D-B230-677C80155093}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,8 +30,14 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\GMPROG2P1">
-      <UniqueIdentifier>{5E0CEBD3-600B-42B1-88C7-162E6B50E63E}</UniqueIdentifier>
+      <UniqueIdentifier>{BE842C3F-64B5-4C2C-A95B-5B888B7353E2}</UniqueIdentifier>
     </Filter>
+    <ClCompile Include="..\..\Source\GMPROG2P1\FloorTile.cpp">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\GMPROG2P1\FloorTile.h">
+      <Filter>Source\GMPROG2P1</Filter>
+    </ClInclude>
     <None Include="..\..\Source\GMPROG2P1\GMPROG2P1.Build.cs">
       <Filter>Source\GMPROG2P1</Filter>
     </None>

@@ -11,6 +11,10 @@ class AGMPROG2P1GameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 
+
+protected:
+	
+
 public:
 	AGMPROG2P1GameMode();
 };
