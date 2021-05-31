@@ -1,9 +1,0 @@
-C:\Users\binga\OneDrive\Documents\gamprg2_3rd_term_2021_infinite_runner\GMPROG2P1\Intermediate\Build\Win64\UE4Editor\Development\GMPROG2P1\Definitions.GMPROG2P1.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\binga\OneDrive\Documents\gamprg2_3rd_term_2021_infinite_runner\GMPROG2P1\Source\GMPROG2P1/RunCharacter.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
-C:\Program Files\Epic Games\UE_4.25\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
-C:\Users\binga\OneDrive\Documents\gamprg2_3rd_term_2021_infinite_runner\GMPROG2P1\Intermediate\Build\Win64\UE4Editor\Inc\GMPROG2P1\RunCharacter.generated.h
