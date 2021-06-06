@@ -4,12 +4,14 @@
 #include "RunGameMode.h"
 #include "FloorTile.h"
 #include "Math/TransformNonVectorized.h"
-
+#include "RunCharacter.h"
 void ARunGameMode::onTileExit(AFloorTile* floorTile)
 {
 
 	AddTile();
 }
+
+
 
 void ARunGameMode::AddTile()
 {
@@ -38,6 +40,7 @@ void ARunGameMode::BeginPlay()
 		AddTile();
 	}
 
-
+ARunCharacter* player=Cast<ARunCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
+player->OnDeath.AddDynamic(this,&ARunGameMode::Restart);
 //	AFloorTile* tile= Cast<ASamplePawn>(Get)
 }

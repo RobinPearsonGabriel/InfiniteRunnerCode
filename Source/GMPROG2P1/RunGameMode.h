@@ -10,6 +10,7 @@
 /**
  * 
  */
+
 UCLASS()
 class GMPROG2P1_API ARunGameMode : public AGameModeBase
 {
@@ -23,7 +24,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	FTransform NewTransformPoint;
 
-	
+	UFUNCTION(BlueprintImplementableEvent)
+		void Restart();
 	 UFUNCTION()
 	void AddTile();
 public :

@@ -6,7 +6,7 @@
 void ARunCharacterController::BeginPlay()
 {
 	Super::BeginPlay();
-
+	canMove = true;
 	 Runcharacter = Cast<ARunCharacter>(this->GetPawn());
 }
 
@@ -23,15 +23,15 @@ void ARunCharacterController::SetupInputComponent()
 
 void ARunCharacterController::MoveRight(float scale)
 {
-	if (canMove);
+	if (canMove)
 		Runcharacter->AddMovementInput(Runcharacter->GetActorRightVector()*scale, 1.0f, false);
 	
 }
 
 
-void ARunCharacterController::changeCanMove(bool CanMove)
+void ARunCharacterController::CantMove()
 {
-	canMove = CanMove;
+	canMove = false;
 }
 
 void ARunCharacterController::Tick(float DeltaTime)

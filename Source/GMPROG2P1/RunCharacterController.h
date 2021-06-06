@@ -22,11 +22,12 @@ protected:
 	void MoveForward(float scale);
 
 	virtual void SetupInputComponent() override;
-	bool canMove = false;
+	bool canMove;
 class ARunCharacter* Runcharacter;
 
 public:
-	void changeCanMove(bool CanMove);
+	UFUNCTION(BlueprintCallable)
+		void CantMove();
 	virtual void Tick(float DeltaTime) override;
 	//UFUNCTION(BlueprintImplementableEvent)
 //	void OnTileExit()

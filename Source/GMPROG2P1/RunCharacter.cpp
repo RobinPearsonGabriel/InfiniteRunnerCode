@@ -6,6 +6,8 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Containers/UnrealString.h"
+#include "RunCharacterController.h"
+
 // Sets default values
 ARunCharacter::ARunCharacter()
 {
@@ -26,7 +28,7 @@ Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
 	bUseControllerRotationRoll = true;
 	bUseControllerRotationRoll = true;
 	
-	
+	isDead = false;
 	Camera->SetupAttachment(SpringArm);
 	//Camera->SetRelativeLocation(FVector(-500.0f, 0, 0));
 }
@@ -49,6 +51,20 @@ void ARunCharacter::Tick(float DeltaTime)
 	//if (GEngine)
 	//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, location.ToString());
 
+}
+
+
+
+
+
+void ARunCharacter::Die_Implementation()
+{
+
+	
+		ARunCharacterController* controller = Cast<ARunCharacterController>(GetWorld()->GetFirstPlayerController());
+		controller->CantMove();
+		isDead = true;
+		OnDeath.Broadcast();
 }
 
 // Called to bind functionality to input
