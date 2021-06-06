@@ -38,6 +38,8 @@ void ARunCharacter::BeginPlay()
 	
 }
 
+
+
 // Called every frame
 void ARunCharacter::Tick(float DeltaTime)
 {

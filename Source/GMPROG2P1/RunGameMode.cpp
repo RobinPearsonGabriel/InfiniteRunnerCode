@@ -20,7 +20,7 @@ void ARunGameMode::AddTile()
 	SpawnParams.Owner = this;
 	//SpawnParams.Instigator = this;
 	
-	AFloorTile* floorTile= Cast<AFloorTile>(GetWorld()->SpawnActor<AFloorTile>(TilePrefab,NewTransformPoint, SpawnParams ));
+	AFloorTile* floorTile = Cast<AFloorTile>(GetWorld()->SpawnActor<AFloorTile>(TilePrefab,NewTransformPoint, SpawnParams ));
 	floorTile->OnPlayerExit.AddDynamic(this, &ARunGameMode::onTileExit );
 	NewTransformPoint.SetLocation(floorTile->Getnextpoint());
 }

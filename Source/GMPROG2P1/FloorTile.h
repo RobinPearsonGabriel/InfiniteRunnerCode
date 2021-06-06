@@ -23,12 +23,24 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	void DestroyTile();
+
+	TArray<AActor*>Trash;
+
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		class UBoxComponent* TileBox;
+
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* Floor;
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* WallA;
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* WallB;
+
+	UPROPERTY(EditAnywhere)
+	TArray<	TSubclassOf <class AObstacle>> ObstacleClasses;
+
 	UPROPERTY(BlueprintReadOnly)
 		class USceneComponent* root;
 
@@ -37,6 +49,12 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UBoxComponent* ExitTrigger;
 
+
+	void SpawnTile();
+
+
+
+	
 UFUNCTION()
  void OnActorOverlap(  UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 public:	

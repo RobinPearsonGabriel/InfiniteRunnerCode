@@ -23,15 +23,21 @@ void ARunCharacterController::SetupInputComponent()
 
 void ARunCharacterController::MoveRight(float scale)
 {
-	Runcharacter->AddMovementInput(Runcharacter->GetActorRightVector()*scale, 1.0f, false);
+	if (canMove);
+		Runcharacter->AddMovementInput(Runcharacter->GetActorRightVector()*scale, 1.0f, false);
 	
 }
 
+
+void ARunCharacterController::changeCanMove(bool CanMove)
+{
+	canMove = CanMove;
+}
 
 void ARunCharacterController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	//Runcharacter->
-
-	Runcharacter->AddMovementInput(Runcharacter->GetActorForwardVector(), 1.0f, false);
+	if (canMove)
+		Runcharacter->AddMovementInput(Runcharacter->GetActorForwardVector(), 1.0f, false);
 }
