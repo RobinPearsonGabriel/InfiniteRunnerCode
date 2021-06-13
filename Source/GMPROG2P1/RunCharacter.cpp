@@ -30,6 +30,7 @@ Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
 	
 	isDead = false;
 	Camera->SetupAttachment(SpringArm);
+	Coins = 0;
 	//Camera->SetRelativeLocation(FVector(-500.0f, 0, 0));
 }
 
@@ -51,6 +52,18 @@ void ARunCharacter::Tick(float DeltaTime)
 	//if (GEngine)
 	//	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, location.ToString());
 
+}
+
+void ARunCharacter::AddCoin_Implementation()
+{
+	Coins++;
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, FString::FromInt(Coins));
+}
+
+int32 ARunCharacter::GetCoin()
+{
+	return Coins;
 }
 
 

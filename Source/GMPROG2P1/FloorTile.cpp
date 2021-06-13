@@ -9,6 +9,8 @@
 #include "RunCharacter.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Obstacle.h"
+#include "PickUp.h"
+
 
 // Sets default values
 AFloorTile::AFloorTile()
@@ -24,14 +26,14 @@ AFloorTile::AFloorTile()
 
 	ExitTrigger = CreateDefaultSubobject<UBoxComponent>(TEXT("ExitTrigger"));
 	TileBox= CreateDefaultSubobject<UBoxComponent>(TEXT("Tile Spawn Box"));
-
+	CoinBox= CreateDefaultSubobject<UBoxComponent>(TEXT("Coin Spawn Box"));
 	Floor->SetupAttachment(root);
 	WallA->SetupAttachment(root);
 	WallB->SetupAttachment(root);
 	AttatchPoint->SetupAttachment(root);
 	ExitTrigger->SetupAttachment(root);
 	TileBox->SetupAttachment(root);
-
+	CoinBox->SetupAttachment(root);
 	
 }
 
@@ -41,8 +43,20 @@ void AFloorTile::BeginPlay()
 	Super::BeginPlay();
 
 	ExitTrigger->OnComponentBeginOverlap.AddDynamic(this, &AFloorTile::OnActorOverlap);
-	SpawnTile();
-	
+
+	int32 rand;
+
+	rand = FMath::RandRange(0, 100);
+
+	if (rand <= 60)
+	{
+		SpawnObstacle();
+	}
+	rand = FMath::RandRange(0, 100);
+	if (rand <= 30)
+	{
+		SpawnCoin();
+	}
 
 }
 
@@ -68,7 +82,7 @@ FVector AFloorTile::Getnextpoint()
 	return AttatchPoint->GetComponentLocation();
 }
 
-void AFloorTile::SpawnTile()
+void AFloorTile::SpawnObstacle()
 {
 	int32 rand;
 	
@@ -87,10 +101,36 @@ void AFloorTile::SpawnTile()
 	pos.SetRotation(GetActorRotation().Quaternion());
 
 	AObstacle* obstacle = Cast<AObstacle>(GetWorld()->SpawnActor<AObstacle>(ObstacleClasses[rand],pos , SpawnParams));
-	//floorTile->OnPlayerExit.AddDynamic(this, &ARunGameMode::onTileExit);
-	//NewTransformPoint.SetLocation(floorTile->Getnextpoint());
+	
 	
 	Trash.Add(obstacle);
+}
+
+void AFloorTile::SpawnCoin()
+{
+	for (int i = 0; i < 5; i++)
+	{
+		int32 rand;
+
+		rand = FMath::RandRange(0, PickUpClasses.Num() - 1);
+
+		if (!PickUpClasses[rand]) return;
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+		SpawnParams.bNoFail = true;
+		SpawnParams.Owner = this;
+		//SpawnParams.Instigator = this;
+
+		FTransform pos;
+
+		pos.SetLocation(UKismetMathLibrary::RandomPointInBoundingBox(this->CoinBox->Bounds.Origin, this->CoinBox->Bounds.BoxExtent));
+		pos.SetRotation(GetActorRotation().Quaternion());
+
+		APickUp* pickup = Cast<APickUp>(GetWorld()->SpawnActor<APickUp>(PickUpClasses[rand], pos, SpawnParams));
+
+		Trash.Add(pickup);
+	}
+	
 }
 
 
@@ -100,8 +140,7 @@ void AFloorTile::OnActorOverlap( UPrimitiveComponent* OverlappedComponent, AActo
 	if (ARunCharacter* Character = Cast<ARunCharacter>(OtherActor))
 	{
 	
-		if (GEngine) 
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Blue, TEXT("Hit"));
+		
 
 		OnPlayerExit.Broadcast(this);
 

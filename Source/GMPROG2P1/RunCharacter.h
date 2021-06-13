@@ -23,7 +23,9 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	
+
+	UPROPERTY(VisibleAnywhere,BluePrintReadWrite)
+	int32 Coins;
 UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		class USkeletalMeshComponent* SkeletalMesh;
 
@@ -40,7 +42,12 @@ public:
 
 		virtual void Tick(float DeltaTime) override;
 	
+		UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
+		void AddCoin();
+		void AddCoin_Implementation();
 
+		UFUNCTION(BlueprintPure, BlueprintCallable)
+		int32 GetCoin();
 
 		UFUNCTION(BlueprintNativeEvent,BlueprintCallable)
 		void Die();

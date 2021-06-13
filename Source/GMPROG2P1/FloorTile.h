@@ -29,7 +29,8 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UBoxComponent* TileBox;
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+		class UBoxComponent* CoinBox;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UStaticMeshComponent* Floor;
@@ -41,6 +42,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	TArray<	TSubclassOf <class AObstacle>> ObstacleClasses;
 
+	UPROPERTY(EditAnywhere)
+		TArray<	TSubclassOf <class APickUp>> PickUpClasses;
+
 	UPROPERTY(BlueprintReadOnly)
 		class USceneComponent* root;
 
@@ -50,9 +54,9 @@ protected:
 		class UBoxComponent* ExitTrigger;
 
 
-	void SpawnTile();
+	void SpawnObstacle();
 
-
+	void SpawnCoin();
 
 	
 UFUNCTION()
